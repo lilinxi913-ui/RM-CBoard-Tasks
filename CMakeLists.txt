@@ -56,7 +56,11 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     sp_middleware/io/bmi088/bmi088.cpp # <- 添加这一行
     sp_middleware/tools/mahony/mahony.cpp # <- 添加这一行
     sp_middleware/tools/gimbal/gimbal.cpp # <- 添加这一行
+
+    applications/uart_task.cpp # <- 添加这一行
+    sp_middleware/io/dbus/dbus.cpp # <- 添加这一行
 )
+
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
