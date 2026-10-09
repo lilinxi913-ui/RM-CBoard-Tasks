@@ -96,3 +96,18 @@ openocd -f openocd.cfg -c "program build/Debug/C_Board_Basic.elf verify reset ex
 通道顺序：A 目标角度、A 实际角度、B 目标角度、B 实际角度、展开后的累计 yaw、yaw 角速度。角度单位 rad，角速度单位 rad/s。
 
 常用调试变量：`dbg_mode`（0 失能/1 联动/2 复位）、`dbg_calibrated`、`dbg_ratio`、`dbg_a_rx_count`、`dbg_b_rx_count`、各 `dbg_*_alive`、`dbg_a_torque_cmd`、`dbg_b_torque_cmd`。默认目标速度限幅 15 rad/s、命令力矩限幅 0.3 N·m；PID 和 `A_SIGN`、`B_SIGN` 见 `can_task.cpp`。修改方向或控制参数后重新编译、烧录和标定。
+
+## 获取完整工程与版本历史
+
+本仓库从原开发仓库的 `test0/buzzer/C_Board_Basic` 目录提取，保留该工程的 8 条开发提交及作者、时间和提交说明。提取目录后提交编号发生变化，原始仓库另行保留。
+
+中间件以 Git 子模块管理，当前固定版本为 `0d56d8417fad044f64b3d2e68151c8ec25a5b5b7`。克隆时请同时获取依赖：
+
+```powershell
+git clone --recurse-submodules https://github.com/lilinxi913-ui/RM-CBoard-Tasks.git
+cd RM-CBoard-Tasks
+cmake --preset Debug
+cmake --build --preset Debug
+```
+
+若已经克隆但中间件目录为空，执行 `git submodule update --init --recursive`。不要直接更新到上游最新版本。
