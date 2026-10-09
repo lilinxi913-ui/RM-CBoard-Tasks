@@ -57,11 +57,17 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     sp_middleware/tools/mahony/mahony.cpp # <- 添加这一行
     sp_middleware/tools/gimbal/gimbal.cpp # <- 添加这一行
 
-    applications/uart_task.cpp # <- 添加这一行
-    sp_middleware/io/dbus/dbus.cpp # <- 添加这一行
+    applications/uart_task.cpp 
+    sp_middleware/io/dbus/dbus.cpp 
 
     applications/plotter_task.cpp
     sp_middleware/io/plotter/plotter.cpp
+
+    applications/can_task.cpp
+    sp_middleware/io/can/can.cpp
+    sp_middleware/motor/rm_motor/rm_motor.cpp
+    sp_middleware/tools/pid/pid.cpp
+    sp_middleware/tools/math_tools/math_tools.cpp
 )
 
 
